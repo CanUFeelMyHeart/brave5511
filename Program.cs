@@ -30,9 +30,35 @@
 // 918 -> 98
 
 // [100, 999]: Next(100,1000)
-int number = new Random().Next(100, 1000);
-int firstDigit = number / 100; // 456 / 100 = 4
-int thirdDigit = number % 10; // 456 % 10 = 6
-// 4 * 10 + 6
-int result = firstDigit * 10 + thirdDigit;
-Console.WriteLine($"{number} -> {result}");
+// int number = new Random().Next(100, 1000);
+// int firstDigit = number / 100; // 456 / 100 = 4
+// int thirdDigit = number % 10; // 456 % 10 = 6
+// // 4 * 10 + 6
+// int result = firstDigit * 10 + thirdDigit;
+// Console.WriteLine($"{number} -> {result}");
+
+
+// Напишите программу, которая принимает 
+// на вход число и проверяет,
+// кратно ли оно одновременно 
+// 7 и 23. Если число не кратно 7 и 23,
+// то программа выводит остаток от деления.
+ 
+// 14 -> нет
+// 46 -> нет 
+// 161 -> да
+
+Console.Write("Введите число: ");
+int number = Convert.ToInt32(Console.ReadLine());
+// "&&" - "И", апельсины И яблоки (обязательно выполнить оба усл-я)
+// "||" - "ИЛИ" (хотя бы одно условие - истина)
+if (number % 7 == 0 && number % 23 == 0)
+{
+    Console.WriteLine($"Да, число {number} кратно 7 и 23");
+}
+else
+{
+    Console.WriteLine("Не кратно");
+    Console.WriteLine($"Остаток от деления {number} на 7 = {number % 7}");
+    Console.WriteLine($"Остаток от деления {number} на 23 = {number % 23}");
+}
